@@ -132,7 +132,9 @@ class VideotoTax3D:
         masks, scores, logits, confidences, labels, input_boxes = gsam2.get_masks_image(self.object_name, frames[-1])
         if masks is None:
             return None
-        segmentation, _ = gsam2.filter_masks(masks, labels, self.num_objects)
+        filtered_masks, unique_labels = gsam2.filter_masks(masks, labels, self.num_objects)
+        
+        segmentation = filtered_masks
         segmentation.flatten()
         segmentation = segmentation.squeeze().reshape(-1)
 
