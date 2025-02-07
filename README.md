@@ -56,6 +56,19 @@ For now, the easiest thing to do is to install ``non-rigid`` in editable mode. T
 ```
 pip install -e .
 ```
+
+## Installation for Real Dataset
+```bash
+conda create -n vid2tax3d python=3.10 # using 3.10 because of Delta tracker, but could use a newer version considering sam 2 accepts python >3.10
+conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+pip install pyk4a scipy open3d opencv-python supervision pycocotools transformers
+
+cd third_party/Grounded-SAM-2
+pip install -e .
+pip install --no-build-isolation -e grounding_dino
+pip install -r grounding_dino/requirements.txt
+```
+
 And you're done!
 
 # Generating Datasets #
