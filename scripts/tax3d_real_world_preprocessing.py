@@ -45,9 +45,10 @@ class VideotoTax3D:
         self.technique = cfg.preprocessing.technique
         self.object_name = cfg.preprocessing.object_name
         self.num_objects = cfg.preprocessing.get('num_objects', 1)  # Add this line
-        self.gsam2 = GSAM2(debug=self.debug)
         self.to_world_frame = cfg.preprocessing.world_frame
         self.debug = cfg.preprocessing.debug
+
+        self.gsam2 = GSAM2(debug=self.debug)
 
         # Create output_data_dir if it doesn't exist
         os.makedirs(self.output_data_dir, exist_ok=True)

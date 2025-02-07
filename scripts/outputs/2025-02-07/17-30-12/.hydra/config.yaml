@@ -1,0 +1,21 @@
+preprocessing:
+  input_data_dir: /home/jacinto/robot-grasp/data/rgbd_videos_tax3d/
+  output_data_dir: /home/jacinto/robot-grasp/data/tax3d/
+  technique: final_frame_and_se3_transform
+  object_name: mug.
+  num_objects: 1
+  camera2world_file: /home/jacinto/robot-grasp/data/camera_calibration/camera2robot.npz
+  world_frame: true
+  debug: true
+sample_size_action: 512
+sample_size_anchor: 512
+downsample_type: fps
+world_frame: true
+train_size: null
+val_size: null
+center_type: anchor_center
+action_context_center_type: center
+action_transform_type: identity
+anchor_transform_type: random_flat_upright
+translation_variance: 0.0
+rotation_variance: 180

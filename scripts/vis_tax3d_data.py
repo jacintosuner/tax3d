@@ -12,16 +12,16 @@ def visualize_tax3d_data(data_dict):
     # Create Open3D point clouds
     pcd_action = o3d.geometry.PointCloud()
     pcd_action.points = o3d.utility.Vector3dVector(pc_action)
-    pcd_action.paint_uniform_color([1, 0, 0])  # Red color for action point cloud
+    pcd_action.paint_uniform_color([1, 0.6, 0.2])  # Bright orange color for action point cloud
 
     pcd_anchor = o3d.geometry.PointCloud()
     pcd_anchor.points = o3d.utility.Vector3dVector(pc_anchor)
-    pcd_anchor.paint_uniform_color([0, 1, 0])  # Green color for anchor point cloud
+    pcd_anchor.paint_uniform_color([0.2, 0.2, 0.2])  # Dark grey color for anchor point cloud
 
     # Create Open3D point cloud for pc_action + flow
     pcd_action_flow = o3d.geometry.PointCloud()
     pcd_action_flow.points = o3d.utility.Vector3dVector(pc_action + flow)
-    pcd_action_flow.paint_uniform_color([0, 0, 1])  # Blue color for action + flow point cloud
+    pcd_action_flow.paint_uniform_color([0.2, 0.6, 1])  # Pleasant blue color for action + flow point cloud
 
     # Create a coordinate frame
     coordinate_frame = o3d.geometry.TriangleMesh.create_coordinate_frame(size=0.1, origin=[0, 0, 0])
